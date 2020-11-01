@@ -1,8 +1,10 @@
 package com.example.kotlinapplication
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
         val progressBar = findViewById(R.id.progressBar) as ProgressBar
+        val button = findViewById(R.id.button) as Button
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
@@ -49,6 +52,11 @@ class MainActivity : AppCompatActivity() {
                 progressBar.visibility = View.GONE
                 Log.e(TAG, t.toString())
             }
+        })
+
+
+        button.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this, TabActivity2::class.java))
         })
 
     }
