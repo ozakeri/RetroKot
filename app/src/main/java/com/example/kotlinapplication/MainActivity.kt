@@ -14,6 +14,7 @@ import com.example.kotlinapplication.model.MovieResponse
 import com.example.kotlinapplication.model.Movies
 import com.example.kotlinapplication.rest.APIClient
 import com.example.kotlinapplication.rest.ApiInterface
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.jetbrains.anko.toast
 import retrofit2.Call
 import retrofit2.Callback
@@ -29,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById(R.id.recyclerView) as RecyclerView
         val progressBar = findViewById(R.id.progressBar) as ProgressBar
-        val button = findViewById(R.id.button) as Button
+        val floatingActionButton = findViewById(R.id.floatingActionButton) as FloatingActionButton
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
@@ -55,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         })
 
 
-        button.setOnClickListener(View.OnClickListener {
+        floatingActionButton.setOnClickListener(View.OnClickListener {
             startActivity(Intent(this, TabActivity2::class.java))
         })
 
